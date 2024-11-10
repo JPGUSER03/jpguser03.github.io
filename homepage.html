@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UDM</title>
+    <link rel="icon" href="img/UDM_LOGO.png">
+    <link href="homepage.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="double-spinner">
+            <div class="outer-circle"></div>
+            <div class="inner-circle"></div>
+        </div>
+        <div class="try">Loading...</div>
+    </div>
+    <div class="nav">
+        <div class="dashboard">
+            <img src="img/CAS.png" alt="cas_logo" class="logo">
+            <h1>College of Arts and Sciences</h1>
+            <ul class="nav-links">
+                <li><a href="homepage.html">HOME</a></li>
+                <li class="dropdown">
+                    <button class="course-list-button">COURSES &#9660;</button>
+                    <ul class="course-list-dropdown">
+                        <li><a href="ma.html" class="course-option" data-full-name="Bachelor of Science in Mathematics Minor in Computer Science">BSMATH</a></li>
+                        <li><a href="py.html" class="course-option" data-full-name="Bachelor of Science in Psychology">BSPSYCH</a></li>
+                        <li><a href="sw.html" class="course-option" data-full-name="Bachelor of Science in Social Work">BSSWK</a></li>
+                        <li><a href="ps.html" class="course-option" data-full-name="Bachelor of Science in Political Science">BSPS</a></li>
+                        <li><a href="pa.html" class="course-option" data-full-name="Bachelor of Science in Public Administration">BSPA</a></li>
+                        <li><a href="ca.html" class="course-option" data-full-name="Bachelor of Arts in Communication Arts">BACA</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="center">
+        <div class="center-box">
+            <h1>Welcome to the College of Arts and Sciences</h1>
+            <p>Where a diverse range of courses allows you to study about the human experience, social institutions, and scientific research. Each curriculum is designed to equip students with both academic knowledge and practical skills necessary for success in today's changing world. Our programs promote critical thinking, creativity, and analytical abilities, equipping students for successful employment in a wide range of fields.</p>
+            <br>
+            <p>Our Program Include:</p>
+            <h5><b>BS Mathematics</b> -  On analytical and problem-solving skills, with a curriculum covering areas like calculus, algebra, and applied mathematics.</h5>
+            <br>
+            <h5><b>Political Science</b> - Explores governmental systems, public policies, and international relations, preparing students for careers in law, politics, and diplomacy.</h5>
+            <br>
+            <h5><b>Communication Arts</b> - emphasizes media literacy, public speaking, and communication strategies; ideal for students interested in media, journalism, and corporate communication.</h5>
+            <br>
+            <h5><b>Public Administration</b> -  Provides insights into public sector management, policy development, and administrative leadership, fostering future leaders in government and nonprofit organizations.</h5>
+            <br>
+            <h5><b>Psychology</b> -  Studies human behavior, mental processes, and social interactions, offering pathways into counseling, research, and various human services.</h5>
+            <br>
+            <h5><b>Social Work</b> - Prepares students to address social issues, support communities, and advocate for those in need, with a strong emphasis on fieldwork and social justice.</h5>
+            <br>
+            <p>With these diverse programs, the College of Arts & Sciences is committed to nurturing intellectual curiosity and professional readiness.</p>
+        </div>
+    </div>
+    <footer><a href="https://www.facebook.com/CasLsc" target="blank"> UDM - College of Arts and Sciences Website</a>| Universidad de Manila |</br></footer>
+</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadingScreen.style.visibility = 'visible';
+            setTimeout(() => {
+            loadingScreen.style.visibility = 'hidden';
+            }, 3000);
+            const courseListButton = document.querySelector('.course-list-button');
+            courseListButton.addEventListener('click', () => {
+                document.querySelector('.course-list-dropdown').classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url('img/udm.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.dashboard {
+    display: flex;
+    height: 105px;
+    align-items: center;
+    background-color: rgba(250, 249, 246, 0.9);
+    padding: 15px 50px;
+    border-bottom: 3px solid #008000;
+}
+
+.logo {
+    height: 145px;
+    width: 145px;
+}
+
+.dashboard h1 {
+    color: #008000;
+    font-weight: 500;
+    font-size: 30px;
+    margin-right: auto;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links a, .course-list-button {
+    color: #008000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 15px;
+}
+
+.course-list-button {
+    background: none;
+    border: none; 
+    color: #008000; 
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.nav-links a:hover, .course-list-button:hover {
+    color: #f3a702;
+    text-decoration: underline;
+}
+
+.course-list-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin-top: 5px;
+    border-radius: 8px;
+    width: 200px;
+    z-index: 100;
+}
+
+.course-list-dropdown.active {
+    display: block;
+}
+
+
+.course-list-dropdown li a {
+    color: #008000;
+    display: block;
+}
+
+.course-list-dropdown li a:hover {
+    background-color: #f3f3f3;
+}
+
+.content {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); 
+    width: 100%;
+    min-height: 100vh; 
+    
+}
+
+.header {
+    font-size: 26px;
+    font-weight: 700;
+    color: #facc02;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.course-logo{
+    height: 80px;
+    vertical-align: middle; 
+}
+
+.box-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    height: 700px;
+    width: 350px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    border: 2px solid #f3a702;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box h3 {
+    font-family: 'Montserrat';
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 300;
+    word-spacing: 0.5;
+    letter-spacing: 0.1;
+    line-height: 1.5;
+    padding:  15px;
+    margin: 0;
+}
+
+.box h4 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.box h6 {
+    margin-top: 15px;
+    font-family: 'Montserrat';
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 300;
+    word-spacing: normal;
+    letter-spacing: normal;  
+    line-height: 1.5;
+    padding: 15px
+}
+
+.subjects-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.button {
+    background: none;
+    color: #facc02;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: color 0.2s ease;
+}
+
+.button:hover {
+    color: #f3a702;
+    text-decoration: underline;
+}
+
+.content-section {
+    display: none;
+    margin-top: 10px;
+    color: #fff;
+    text-align: left;
+    font-weight: 300;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px); 
+    color: #f3a702;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 24px;
+    z-index: 1000;
+    visibility: hidden;
+}
+
+.try {
+    font-family: 'Montserrat';
+}
+
+.double-spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.inner-circle, .outer-circle {
+    position: absolute;
+    border: 4px solid rgba(243, 167, 2, 0.2);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.inner-circle {
+    border-top: 4px solid #f3a702;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 10px;
+    animation: spinClockwise 1s linear infinite;
+}
+
+.outer-circle {
+    border-top: 4px solid #f3a702;
+    animation: spinCounterClockwise 1s linear infinite;
+}
+
+@keyframes spinClockwise {
+    50% { transform: rotate(50deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spinCounterClockwise {
+    60% { transform: rotate(-50deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+    
